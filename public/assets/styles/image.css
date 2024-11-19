@@ -1,0 +1,31 @@
+.file-container {
+     position: relative;
+}
+
+.custom-file-input {
+  display: none; /* Masquer l'input de fichier */
+}
+
+.file-preview {
+  width: 200px;
+  height: 100px; /* Ajustez la hauteur selon vos besoins */
+  border-radius: 5px;
+  background-color: #f0f0f0; /* Couleur de fond par défaut */
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #ccc;
+  cursor: pointer; /* Indique que la zone est cliquable */
+}
+
+.user-preview {
+     width: 100px;
+  height: 100px; /* Ajustez la hauteur selon vos besoins */
+  border-radius: 50%;
+  background-color: #f0f0f0; /* Couleur de fond par défaut */
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #ccc;
+  cursor: pointer; /* Indique que la zone est cliquable */
+}
+
+   

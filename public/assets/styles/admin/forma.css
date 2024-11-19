@@ -1,0 +1,11 @@
+.forma {
+    position: relative;
+    top: 150px;
+    left: 120px;
+    align-items: center;
+    justify-content: center;
+}
+
+.inp {
+    border: 1px solid rgba(0, 0, 0, 0.235);
+}
