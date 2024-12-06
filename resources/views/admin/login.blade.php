@@ -1,49 +1,45 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link rel="stylesheet" href=" {{ asset('assets/styles/client/index.css') }} ">
-     <link rel="stylesheet" href=" {{ asset('assets/styles/admin/forma.css') }} ">
-     <link rel="stylesheet" href="{{ asset('assets/styles/admin/dashboard.css') }}">
-     <link rel="stylesheet" href="{{ asset('assets/fontawesome/css/all.css') }}">
-     <link rel="stylesheet" href="{{ asset('assets/fontawesome/css/all.min.css') }}">
-     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-     <script src=" {{ asset('assets/script/header.js') }} " defer></script>
-    <link rel="stylesheet" href=" {{ asset('assets/styles/bootstrap.min.css') }} ">
+    <link rel="stylesheet" href="{{ asset('assets/styles/style.css') }}">
+    <script src="{{ asset('assets/js/tailwind.js') }}"></script>
     <title>Document</title>
+
 </head>
+
 <body>
-    <div class="container">
-        <h1>Se connecter</h1>
-        <div class="card">
-            <div class="card-body">
-                <form action="{{ route('auth.login') }}" method="post" class="vstack gap-3">
-                    @csrf
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input class="form-control" type="email" name="email" id="email" value="{{old('email')}}">
-                    </div>
-                    @error('email')
-                    {{ $message }}
-                    @enderror
-                    <div class="form-group">
-                        <label for="email">Mot de passe</label>
-                        <input class="form-control" type="password" name="password" id="password">
-                    </div>
-                    @error('password')
-                    {{ $message }}
-                    @enderror
-                    <button class="btn btn-primary" type="submit">Se connecter</button>
-                </form>
+    <div class="flex items-center justify-center bg-slate-950">
+        <div class=" flex justify-center items-center ">
+            <img class="h-1/2 absolute " src="{{ asset('assets/images/Plan de travail 3@4x.png') }}" alt="">
+            <img class="h-screen" src="{{ asset('assets/images/fond_01.png') }}" alt="">
+        </div>
+        <div class="flex justify-center items-center flex-col">
+            <div class="absolute flex justify-center items-center top-[0px] ">
+                <h1 class=" text-white font-bold text-[3rem] leading-10 ">Se <br> connecter</h1>
+                <img src="{{ asset('assets/images/seri_manjakely.png') }}"  class="h-[29vh] ">
             </div>
+            <form action="{{ route('auth.login') }}" method="post" class="absolute flex flex-col gap-5">
+                @csrf
+                <input type="email" id="email" name="email" placeholder="Email" value="{{old('email')}}" class="h-12 w-[50vh] font-bold block  rounded-full text-[#0A132D] appearance-none bg-white py-4 pl-4 pr-12 text-base text-slate-900 placeholder:text-slate-600 focus:outline-none sm:text-sm sm:leading-6" >
+                @error('email')
+                    {{ $message }}
+                @enderror
+                <input type="password" name="password" id="password" placeholder="Mot de passe" class="h-12 w-[50vh] font-bold block  rounded-full text-[#0A132D] appearance-none bg-white py-4 pl-4 pr-12 text-base text-slate-900 placeholder:text-slate-600 focus:outline-none sm:text-sm sm:leading-6" >
+                @error('password')
+                    {{ $message }}
+                 @enderror
+                <button type="submit" id="bouton" class="mt-10 bg-[#1e958d] h-12 w-[50vh] font-bold block  rounded-full text-white iolet-500 hover:bg-green-600 active:bg-[#2d7873]">Se connecter</button>
+            </form>
+            <img class="h-[99vh] rounded" src="{{ asset('assets/images/fond_02.png') }}" alt="" >
         </div>
     </div>
-</body>
-</html>
+    
 
-   
+</body>
+
+
+</html>
