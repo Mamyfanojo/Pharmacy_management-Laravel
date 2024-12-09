@@ -11,6 +11,7 @@
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link rel="stylesheet" href=" {{ asset('assets/styles/client/index.css') }} ">
+     <link rel="stylesheet" href=" {{ asset('assets/styles/panier.css') }} ">
      <link rel="stylesheet" href=" {{ asset('assets/styles/admin/forma.css') }} ">
      <link rel="stylesheet" href="{{ asset('assets/styles/admin/dashboard.css') }}">
      <link rel="stylesheet" href="{{ asset('assets/fontawesome/css/all.css') }}">
@@ -22,7 +23,7 @@
 <body>
 	<header>
           <i class='bx bx-menu' id="menu-icon"></i>
-          <h3>Dashboard</h3>
+          <h3>@yield('title')</h3>
           <div class="profil-details">
                @auth
                <div>
@@ -45,7 +46,7 @@
      </header>
      <div class="sidebar">
           <div class="title">
-               <h3><span>Ad</span>min</h3>
+               <h3><img class="h-1/2 absolute " src="{{ asset('assets/images/Plan de travail 3@4x.png') }}" width="60px" height="60px" alt=""> <span>Pha</span>rma</h3>
           </div>
 
           @php
@@ -70,7 +71,7 @@
                          <span class="icons"><i class='fas fa-truck icostyl'></i></span>
                          <span class="text">Fournisseur</span>
                     </a>
-                    <a class="" style="text-decoration:none;" href="">
+                    <a @class(['active' => str_contains($route, 'vente')]) style="text-decoration:none;" href=" {{ route('admin.vente') }} ">
                          <span class="icons"><i class='fas fa-cash-register icostyl'></i></span>
                          <span class="text">Faire une vente</span>
                     </a>
@@ -82,9 +83,9 @@
                          <span class="icons"><i class='fas fa-boxes icostyl'></i></span>
                          <span class="text">Gerer les stocks</span>
                     </a>
-                    <a class="" style="text-decoration:none;" href="">
+                    <a @class(['active' => str_contains($route, 'cart')]) style="text-decoration:none;" href=" {{ route('cart.index') }} ">
                          <span class="icons"><i class='fas fa-shopping-cart icostyl'></i></span>
-                         <span class="text">Panier</span>
+                         <span class="text">Panier <span style="color:red;"> [{{ count(session('cart')) }}]</span></span>
                     </a>
                     
                          <form class="mt-4" action="" method="POST">

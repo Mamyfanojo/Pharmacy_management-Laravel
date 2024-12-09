@@ -32,11 +32,8 @@ width:calc(100% - 220px);
 min-height:100vh;
 }
 
-.containers-home {
 
-}
-
-    .cards {
+.cards {
 display: flex;
 justify-content: space-between;
 flex-wrap: wrap;

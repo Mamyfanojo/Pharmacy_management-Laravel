@@ -22,7 +22,7 @@ class AuthController extends Controller
         $credentials = $request->validated();
         if(Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended(route('admin.supplier.index'));
+            return redirect()->intended(route('admin.medicament.index'));
         }
         return to_route('auth.login')->withErrors([
             'email' => 'identifiant incorrect'
