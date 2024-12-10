@@ -123,13 +123,14 @@ header {
      position: absolute;
      top:20px;
      left:300px;
-     width: calc(100% - 200px);
+     width: calc(100% - 300px);
      display:flex;
      align-items:center;
      justify-content:space-between;
      padding:10px 10px;
      background:white;
      box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+     margin-right: 20px;
 }
 
 header h3 {
@@ -143,15 +144,17 @@ header h3 {
 
 header .profil-details {
      display:flex;
+     /* left: 30%; */
      align-items:center;
      background-color: #F5F6FA;
      /* background-color: black; */
      border:2px solid #efeef1;
      border-radius:6px;
      height:50px;
-     min-width:190px;
+     /* min-width:190px; */
      padding: 0 15px 0 2px;
-     width:20%;
+     /* width:20%; */
+     margin-right: 20px;
 }
 
 header .profil-details img {

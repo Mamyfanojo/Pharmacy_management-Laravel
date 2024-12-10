@@ -1,6 +1,6 @@
 @extends('base')
 
-@section('title', 'fournisseur')
+@section('title', 'Fournisseurs')
 
 @section('content')
 

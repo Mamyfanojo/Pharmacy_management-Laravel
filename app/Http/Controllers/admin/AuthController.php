@@ -12,9 +12,9 @@ class AuthController extends Controller
 {
     public function login() {
         // User::create([
-        //     'email' => "mamy@gmail.com",
-        //     'name' => "fanojo",
-        //     'password' => 'manana'
+        //     'email' => "ramamy@gmail.com",
+        //     'name' => "Mamy Fanojo",
+        //     'password' => 'ramamy'
         // ]);
         return view('admin.login');
     }
@@ -22,7 +22,7 @@ class AuthController extends Controller
         $credentials = $request->validated();
         if(Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended(route('admin.medicament.index'));
+            return redirect()->intended(route('admin.dashboard'));
         }
         return to_route('auth.login')->withErrors([
             'email' => 'identifiant incorrect'

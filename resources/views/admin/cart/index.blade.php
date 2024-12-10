@@ -1,6 +1,9 @@
 @extends('base')
 
+@section('title', 'Panier')
+
 @section('content')
+
 <div class="container panier">
     <h1>Votre panier</h1>
     @if(session('cart') && count(session('cart')) > 0)
@@ -26,7 +29,7 @@
                                 <button type="submit" class="btn btn-sm btn-primary">Mettre à jour</button>
                             </form>
                         </td>
-                        <td>{{ $details['price'] * $details['quantity'] }} €</td>
+                        <td>{{ $details['price'] * $details['quantity'] }} Ar</td>
                         <td>
                             <form action="{{ route('cart.remove', $id) }}" method="POST">
                                 @csrf

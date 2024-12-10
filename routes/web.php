@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\AuthController;
 use App\Http\Controllers\admin\CartController;
 use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\MedicamentController;
 use App\Http\Controllers\admin\StockController;
 use App\Http\Controllers\admin\SupplierController;
@@ -28,8 +29,9 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function ()  {
     Route::resource('supplier', SupplierController::class)->except('show');
     Route::resource('category', CategoryController::class)->except('show');
     Route::resource('medicament', MedicamentController::class);
-    
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
+
 
 Route::get('admin/stock-medoc',[ StockController::class, 'index'])->name('admin.medoc.stock')->middleware('auth');
 Route::get('admin/fairevente',[ VenteController::class, 'index'])->name('admin.vente')->middleware('auth');

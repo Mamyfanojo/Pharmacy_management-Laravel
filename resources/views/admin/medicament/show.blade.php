@@ -1,6 +1,6 @@
 @extends('base')
 
-@section('title', 'Medicament detail')
+@section('title', 'Medicament détail')
 
 @section('content')
 

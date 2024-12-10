@@ -22,26 +22,26 @@
 </head>
 <body>
 	<header>
-          <i class='bx bx-menu' id="menu-icon"></i>
+          
           <h3>@yield('title')</h3>
           <div class="profil-details">
-               @auth
+          @auth
                <div>
-                    <img src=" {{ asset('assets/images/users/ae50d1ec8ae30fb0f9ffa68e9758281e.jpg') }} " alt="profil"/>
+                    <img src=" {{ asset('assets/images/user3.png') }} " alt="profil"/>
                     <span class="admin-name"> {{ Illuminate\Support\Facades\Auth::user()->name }} </span>
                </div>
                <div>
-                    <form class="nav-item" action="{{ route('auth.logout') }}" method="post">
+                    <form class="btn btn-danger" action="{{ route('auth.logout') }}" method="post">
                          @method('delete')
                          @csrf
-                         <button class="nav-link btn btn-danger">Se deconnecter</button>
+                         <button class="nav-link">Se deconnecter</button>
                     </form>
                </div>
-               @endauth
+          @endauth
           </div>
-          @guest
+          <!-- @guest
                <a href="{{ route('auth.login') }}">Se connecter</a>
-          @endguest
+          @endguest -->
          
      </header>
      <div class="sidebar">
@@ -55,7 +55,7 @@
 
           <div class="navbars">
                <div class="nav-items">
-                    <a href="" style="text-decoration:none;" class="">
+                    <a  @class(['active' => str_contains($route, 'dashboard')]) href=" {{ route('admin.dashboard') }} " style="text-decoration:none;" >
                          <span class="icons"><i class='fas fa-tachometer-alt icostyl'></i></span>
                          <span class="text">Dashboard</span>
                     </a>
@@ -88,9 +88,6 @@
                          <span class="text">Panier <span style="color:red;"> [{{ count(session('cart')) }}]</span></span>
                     </a>
                     
-                         <form class="mt-4" action="" method="POST">
-                              <button type="submit" class="btn btn-danger">Se déconnecter</button>
-                         </form>  
                </div>
           </div>
      </div><br>
